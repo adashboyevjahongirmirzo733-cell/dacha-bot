@@ -9,4 +9,5 @@ BOT_TOKEN = "8917124993:AAFa1x_OgQJIt5dOEHVyi2BACOa0yKGnHVw"
 ADMIN_ID = 8097790244
 
 # To'lov havolasi (Uzcard/Humo ilovangizdan oling
-PAYMENT_LINK = "https://t.me/share/url?url=Karta: 9860 0366 4392 0402"
+https://humo.uz/transfer?card=9860036643920402
+
