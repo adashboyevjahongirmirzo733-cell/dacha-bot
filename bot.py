@@ -6,7 +6,8 @@ from telegram.ext import (
     MessageHandler, filters, ContextTypes, ConversationHandler
 )
 from database import Database
-from config import BOT_TOKEN, ADMIN_ID, PAYMENT_LINK
+from config import BOT_TOKEN, ADMIN_ID, CARD_NUMBER
+
 from keyboards import (
     main_menu_keyboard, admin_menu_keyboard,
     calendar_keyboard, dachas_keyboard,
