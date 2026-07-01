@@ -61,7 +61,14 @@ async def dacha_handler(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         return MAIN
     if q.data == "back_dachas":
         dachas = db.get_dachas()
-        await q.edit_message_text("🏡 *Dachalarni tanlang:*", parse_mode="Markdown", reply_markup=dachas_kb(dachas))
+        if q.message.photo:
+            try:
+                await q.message.delete()
+            except:
+                pass
+            await ctx.bot.send_message(q.message.chat_id, "🏡 *Dachalarni tanlang:*", parse_mode="Markdown", reply_markup=dachas_kb(dachas))
+        else:
+            await q.edit_message_text("🏡 *Dachalarni tanlang:*", parse_mode="Markdown", reply_markup=dachas_kb(dachas))
         return SELECT_DACHA
     if q.data.startswith("d_"):
         dacha_id = int(q.data.split("_")[1])
@@ -490,3 +497,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
